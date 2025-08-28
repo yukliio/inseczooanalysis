@@ -992,6 +992,8 @@ class IntersectionZooEnv(MultiAgentEnv, TaskSettableEnv):
             "humidity": npa(self.task_context.temperature_humidity.split("_")[1]),
             "electric": self.task_context.electric_or_regular == ELECTRIC,
         }
+
+         
         return obs
 
     def _get_reward(self, vehicle_list: set[str]) -> MultiAgentDict:

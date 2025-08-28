@@ -38,7 +38,7 @@ parser.add_argument('--eval_per_task', default=3, type=str, help='How many times
 
 parser.add_argument('--penetration', default=1.0, type=str, help='Eco drive adoption rate')
 parser.add_argument('--temperature_humidity', default='20_50', type=str, help='Temperature and humidity for evaluations')
-parser.add_argument('--visualize', default=False, type=bool, help='Visualize the agents in SUMO.')
+parser.add_argument('--visualize', default=True, type=bool, help='Visualize the agents in SUMO.')
 
 args = parser.parse_args()
 print(args)

@@ -1,7 +1,7 @@
 # !!! For python 3.10 !!!
 
 # RL
-#ray[rllib]==2.11.0
+ray[rllib]==2.11.0
 traci==1.12.0
 gymnasium==0.28.1
 
@@ -12,6 +12,3 @@ torch==2.2.2
 
 # Logging
 wandb==0.17.0 
-
-
-# test test
