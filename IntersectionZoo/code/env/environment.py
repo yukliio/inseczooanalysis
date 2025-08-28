@@ -32,7 +32,7 @@ from pathlib import Path
 
 from env.config import IntersectionZooEnvConfig
 from env.task_context import PathTaskContext, TaskContext
-from gymnasium.spaces import Box
+from gymnasium.spaces import Box # find dims of this
 from gymnasium.spaces import Dict as GymDict
 from gymnasium.spaces import Discrete
 from ray.rllib.env.apis.task_settable_env import TaskSettableEnv
@@ -117,7 +117,7 @@ class IntersectionZooEnv(MultiAgentEnv, TaskSettableEnv):
                 "leader_right": other_vehicle_space,
                 "follower_left": other_vehicle_space,
                 "follower_right": other_vehicle_space,
-                # context, stay constant
+                # context, stay constant (can we turn this into a matrix??)
                 "penetration_rate": Box(npa(0), npa(1)),
                 "lane_length": Box(
                     npa(0), npa(GLOBAL_MAX_LANE_LENGTH / LANE_LENGTH_NORMALIZATION)
