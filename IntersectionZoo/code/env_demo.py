@@ -23,6 +23,7 @@
 import argparse
 from pathlib import Path
 
+
 import numpy as np
 from env.config import IntersectionZooEnvConfig
 from env.task_context import PathTaskContext
@@ -59,6 +60,8 @@ env_conf = IntersectionZooEnvConfig(
 # Create the environment
 env = IntersectionZooEnv({"intersectionzoo_env_config": env_conf})
 
+# print("Environment variables:", env.__dict__)
+
 def filter_obs(obs: dict):
     def simplify(v):
         if isinstance(v, np.ndarray):
@@ -86,9 +89,28 @@ while not terminated["__all__"]:
     # Take a step in the environment
     obs, reward, terminated, truncated, info = env.step(action)
 
-    # Print the observations and reward
-    print("Observations:", filter_obs(obs))
-    print("Reward:", filter_rew(reward))
+    # # Print the observations and reward
+    # print("Observations:", filter_obs(obs))
+    # print("Reward:", filter_rew(reward))
+
+    for agent_id, agent_obs in obs.items():
+        context_np = np.array([
+            agent_obs["penetration_rate"],
+            agent_obs["speed_limit"],
+            agent_obs["green_phase"],
+            agent_obs["red_phase"],
+            agent_obs["temperature"],
+            agent_obs["humidity"]
+            # agent_obs["electric"]
+        ])
+        print(
+            "Agent:", agent_id,
+            # "penetration_rate:", agent_obs["penetration_rate"],
+            # "lane_length:", agent_obs["lane_length"]
+            agent_obs["green_phase"], 
+            agent_obs["lane_index"]
+
+        )
 
 # Close the environment
 env.close()

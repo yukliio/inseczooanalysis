@@ -54,8 +54,8 @@ wandb.init(project=args.wandb_project)
 
 ray.init(ignore_reinit_error=True, num_cpus=args.num_workers + 15)
 
-tasks = PathTaskContext(
-    dir=Path(args.intersection_dir),
+tasks = PathTaskContext( # sets all possible tasks based off of parameters/
+    dir=Path(args.intersection_dir), # directory to the interectionzoo dataset
     single_approach=True,
     penetration_rate=args.penetration,
     temperature_humidity=args.temperature_humidity,
@@ -69,7 +69,7 @@ env_conf = IntersectionZooEnvConfig(
     fleet_reward_ratio=1,
 )
 
-def curriculum_fn(train_results, task_settable_env, env_ctx):
+def curriculum_fn(train_results, task_settable_env, env_ctx): # randomly sample what ask to train
     return tasks.sample_task()
 
 save_dir = f'{args.dir}/runs/{datetime.now().strftime("%Y%m%d_%H%M")}'
