@@ -57,10 +57,26 @@ env_conf = IntersectionZooEnvConfig(
     visualize_sumo=True,
 )
 
+# contexts = []
+# for i in range(10):
+#     print(i)
+#     task = tasks.sample_task()
+#     context = {
+#         'intersection_dir': str(task.dir),
+#         'single_approach': task.single_approach,
+#         'penetration_rate': task.penetration_rate,
+#         'temperature': int(task.temperature_humidity.split('_')[0]),
+#         'humidity': int(task.temperature_humidity.split('_')[1]),
+#         'electric_or_regular': task.electric_or_regular,
+#         'compact_str': task.compact_str()
+#     }
+#     contexts.append(context)
+
+
 # Create the environment
 env = IntersectionZooEnv({"intersectionzoo_env_config": env_conf})
 
-# print("Environment variables:", env.__dict__)
+print("Environment variables:", env_conf.task_context)
 
 def filter_obs(obs: dict):
     def simplify(v):
@@ -100,16 +116,18 @@ while not terminated["__all__"]:
             agent_obs["green_phase"],
             agent_obs["red_phase"],
             agent_obs["temperature"],
-            agent_obs["humidity"]
-            # agent_obs["electric"]
+            agent_obs["humidity"],
+           np.array([agent_obs["electric"]], dtype=np.float32)
         ])
         print(
-            "Agent:", agent_id,
+           
             # "penetration_rate:", agent_obs["penetration_rate"],
             # "lane_length:", agent_obs["lane_length"]
-            agent_obs["green_phase"], 
-            agent_obs["lane_index"]
-
+            # agent_obs["green_phase"], 
+            # agent_obs["lane_index"]
+            # agent_obs["electric"], 
+            # np.shape(context_np),
+            context_np  
         )
 
 # Close the environment

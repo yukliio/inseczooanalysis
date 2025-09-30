@@ -38,7 +38,7 @@ parser.add_argument('--dir', default='wd/new_exp', type=str, help='Result direct
 parser.add_argument('--intersection_dir', default='dataset/salt-lake-city', type=str, help='Path to intersection dataset')
 parser.add_argument('--wandb_project', default='intersectionzoo', type=str, help='Weights and biases project name')
 parser.add_argument('--num_workers', default=10, type=str, help='Number of workers')
-parser.add_argument('--num_gpus', default=1, type=str, help='Number of GPUs')
+parser.add_argument('--num_gpus', default=0, type=str, help='Number of GPUs')
 parser.add_argument('--save_frequency', default=5, type=str, help='Frequency of saving checkpoints')
 parser.add_argument('--rollouts', default=500, type=str, help='Number of rollouts')
 
@@ -52,7 +52,7 @@ Path(args.dir).mkdir(parents=True, exist_ok=True)
 
 wandb.init(project=args.wandb_project)
 
-ray.init(ignore_reinit_error=True, num_cpus=args.num_workers + 15)
+ray.init(ignore_reinit_error=True, num_cpus=args.num_workers)
 
 tasks = PathTaskContext(
     dir=Path(args.intersection_dir),                    
@@ -77,7 +77,7 @@ algo = (
     .rollouts(num_rollout_workers=args.num_workers, sample_timeout_s=3600, \
         batch_mode="complete_episodes", rollout_fragment_length=400)
     .resources(num_gpus=args.num_gpus)
-    .evaluation(evaluation_num_workers=1, evaluation_duration=1, \
+    .evaluation(evaluation_num_workers=0, evaluation_duration=1, \
         evaluation_duration_unit='episodes', evaluation_force_reset_envs_before_iteration=True)
     .environment(
         env=IntersectionZooEnv,

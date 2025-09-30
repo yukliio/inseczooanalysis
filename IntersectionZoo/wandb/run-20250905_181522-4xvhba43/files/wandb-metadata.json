@@ -1,0 +1,208 @@
+{
+    "os": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.10.18",
+    "heartbeatAt": "2025-09-05T22:15:23.733457",
+    "startedAt": "2025-09-05T22:15:22.232451",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/qianyu/yukliio/codeprojects/inseczooanalysis/IntersectionZoo/code/ppo_training.py",
+    "codePathLocal": "code/ppo_training.py",
+    "codePath": "IntersectionZoo/code/ppo_training.py",
+    "git": {
+        "remote": "https://github.com/yukliio/inseczooanalysis.git",
+        "commit": "07eda86bebc27df635b2b68837c42be43532d9ae"
+    },
+    "email": "qianyuhuang0722@gmail.com",
+    "root": "/home/qianyu/yukliio/codeprojects/inseczooanalysis",
+    "host": "Desktop-Quanyu",
+    "username": "qianyu",
+    "executable": "/home/qianyu/miniconda3/envs/venv/bin/python",
+    "cpu_count": 16,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 3500.050000000002,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3500.05,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1006.853931427002,
+            "used": 13.376579284667969
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3090",
+            "memory_total": 25769803776
+        }
+    ],
+    "memory": {
+        "total": 78.4841537475586
+    }
+}

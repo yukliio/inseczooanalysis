@@ -26,7 +26,8 @@ import argparse
 
 from pathlib import Path
 from datetime import datetime
-from rllib_ddpg.ddpg import DDPGConfig
+from ray.rllib.algorithms.ddpg import DDPGConfig
+from ray.rllib.algorithms.ppo import PPOConfig
 from sumo.constants import REGULAR
 from env.config import IntersectionZooEnvConfig
 from env.environment import IntersectionZooEnv
